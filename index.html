@@ -10,21 +10,30 @@
 
 </head>
 <body>
+    <form id="form">
+        <label for="fname" class="player">Player 1 :</label><br>
+        <input type="text" id="player1" class="input"><br>
+        <label for="lname" class="player">Player 2 : </label><br>
+        <input type="text" id="player2" class="input"><br>
+        <input type="submit" value="Play" name="submit" id="sub" class="submit";> 
+      </form> 
+        
+
 
     <div class="game">
-        <div class="title"><span> X O </span>GAME</div>
+        <div class="title" id="PlayerC">X O GAME</div>
 
-        <div class="square" id="item1"></div>
-        <div class="square" id="item2"></div>
-        <div class="square" id="item3"></div>
+        <div class="square" id="item1" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item2" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item3" onclick="GetIdSquare(this.id)"></div>
 
-        <div class="square" id="item4"></div>
-        <div class="square" id="item5"></div>
-        <div class="square" id="item6"></div>
+        <div class="square" id="item4" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item5" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item6" onclick="GetIdSquare(this.id)"></div>
 
-        <div class="square" id="item7"></div>
-        <div class="square" id="item8"></div>
-        <div class="square" id="item9"></div>
+        <div class="square" id="item7" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item8" onclick="GetIdSquare(this.id)"></div>
+        <div class="square" id="item9" onclick="GetIdSquare(this.id)"></div>
 
 
     </div>
