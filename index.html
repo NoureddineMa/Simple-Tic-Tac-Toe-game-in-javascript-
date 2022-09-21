@@ -15,13 +15,18 @@
         <input type="text" id="player1" class="input"><br>
         <label for="lname" class="player">Player 2 : </label><br>
         <input type="text" id="player2" class="input"><br>
+        <div class="buttons">
         <input type="submit" value="Play" name="submit" id="sub" class="submit";> 
+        <input value="Refresh" type="submit" id="refresh" class="refresh" onclick="window.location.reload();";> 
+        </div>
       </form> 
-        
-
 
     <div class="game">
         <div class="title" id="PlayerC">X O GAME</div>
+
+        
+        
+        <div id="winner"style="color:red;margin:10px 0"></div>
 
         <div class="square" id="item1" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item2" onclick="GetIdSquare(this.id)"></div>

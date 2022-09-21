@@ -13,6 +13,7 @@ form {
     padding:20px;
 }
 .submit {
+  border-radius: 12px;
     margin: 30px;
     background-color: #DF7861;
     color: white;
@@ -20,6 +21,17 @@ form {
     cursor: pointer;
     font-weight: bolder;
     border: none;
+}
+.refresh {
+ 
+  border-radius: 12px;
+  margin: 30px;
+  background-color: #25316D;
+  color: white;
+  padding:5px 70px;
+  cursor: pointer;
+  font-weight: bolder;
+  border: none;
 }
 .player {
     color: white;
@@ -58,3 +70,8 @@ form {
     cursor: pointer;
     background-color: #DF7861 ;
   }
+  /* .buttons {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  } */
