@@ -1,21 +1,30 @@
-/* * {
-    background-image: url('./img/background.jpg');
-    
-} */
+body {
+    background-image: url('https://media.istockphoto.com/vectors/tic-tac-toe-school-game-colorful-seamless-pattern-for-fabric-and-on-vector-id1292919739?k=20&m=1292919739&s=612x612&w=0&h=3tcAnbVokO9kdKAa3xVqanBdSaMIMGjOH-lLG17iGm4=');
+    font-family:monospace;
+}
+.Score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 1rem;
+}
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #FFDE00;  
     margin: 0 auto;
-    background-color: #94B49F;  
-    width: 70%; 
     border-radius: 1rem;
-    padding:20px;
+    display: block;
+    text-align: center;
+    width: 21%;
+    padding: 20px;
+    height: 171px;
+    
 }
 .submit {
   border-radius: 12px;
     margin: 30px;
-    background-color: #DF7861;
+    background-color: #25316D;
     color: white;
     padding:5px 70px;
     cursor: pointer;
@@ -23,7 +32,6 @@ form {
     border: none;
 }
 .refresh {
- 
   border-radius: 12px;
   margin: 30px;
   background-color: #25316D;
@@ -34,11 +42,11 @@ form {
   border: none;
 }
 .player {
-    color: white;
+    color: black;
     margin: 10px;
     font-weight: bolder;
-    border: none;
-}
+    outline: none;
+  }
 .input {
     padding: 5px 0;
 }
@@ -49,19 +57,20 @@ form {
     color: rgb(83, 14, 27);
     margin: 20px auto;
     font-weight: bolder;
+    display: none;
 }
   .title {
-    background-color: #DF7861;
+    background-color: #FFDE00;
     padding: 10px 30px;
     margin: 20px;
     font-weight: bolder;
-    color: white;
+    color: black;
   }
   .square {
     width: 80px;
     height: 80px;
     color:white;
-    background-color:#94B49F;
+    background-color:#FFDE00;
     float: left;
     margin: 2px;
     font-size: 70px;
@@ -70,8 +79,4 @@ form {
     cursor: pointer;
     background-color: #DF7861 ;
   }
-  /* .buttons {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-  } */
+  

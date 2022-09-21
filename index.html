@@ -10,43 +10,36 @@
 
 </head>
 <body>
-    <form id="form">
-        <label for="fname" class="player">Player 1 :</label><br>
+    <form id="form" class="animate__animated animate__bounce" style="margin-top: 60px;">
+        <label for="fname" class="player" style="margin: 0 auto;padding-top: 80px;">Player 1 :</label><br>
         <input type="text" id="player1" class="input"><br>
         <label for="lname" class="player">Player 2 : </label><br>
         <input type="text" id="player2" class="input"><br>
         <div class="buttons">
-        <input type="submit" value="Play" name="submit" id="sub" class="submit";> 
-        <input value="Refresh" type="submit" id="refresh" class="refresh" onclick="window.location.reload();";> 
+        <input type="submit" value="Play" name="submit" id="sub" class="submit"; onclick="AddClass();"> 
         </div>
       </form> 
 
     <div class="game">
         <div class="title" id="PlayerC">X O GAME</div>
-
-        
-        
-        <div id="winner"style="color:red;margin:10px 0"></div>
-
+        <div id="winner"style="color:white;margin:10px 0"></div>
         <div class="square" id="item1" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item2" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item3" onclick="GetIdSquare(this.id)"></div>
-
         <div class="square" id="item4" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item5" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item6" onclick="GetIdSquare(this.id)"></div>
-
         <div class="square" id="item7" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item8" onclick="GetIdSquare(this.id)"></div>
         <div class="square" id="item9" onclick="GetIdSquare(this.id)"></div>
-
-
     </div>
 
+    <div class="Score" style="background-color: #FFDE00 ; color: black; width:20%; margin:0 auto; margin-top:20px;">
+        <div class="div">SCORE PLAYER 1 :</div>
+        <div class="div">SCORE PLAYER 2 :</div>
+        <div id="refresh"></div>
 
-
-
-
+    </div>
     <script src="/assets/main.js"></script>
 </body>
 </html>
