@@ -3,50 +3,48 @@
         let title = document.getElementById('PlayerC');
         let squares = [];
         let turn = 'X';
+        let ScoreX = 0;
+        let ScoreO = 0;
 
-        
         // Set data to localtstorage : 
         form.addEventListener("submit", function(e) {
         e.preventDefault();
         // Get HTML elements:
-
+        
         let player_1 = document.getElementById('player1').value;
         let player_2 = document.getElementById('player2').value;
-        
         // Storing Data form:
-        let p1 = localStorage.setItem('FirstPlayer',player_1);
-        let p2 = localStorage.setItem('SecondPlayer',player_2); 
-        
-        // Get Data :
-        let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
-        let GetSecondPlayer = localStorage.getItem('SecondPlayer');        
-        // Choose Player randomly : 
-        let RandomPlay = [GetFirstPlayer,GetSecondPlayer];
-        let resultPlayer = RandomPlay[Math.floor(Math.random()*RandomPlay.length)];
-        // Who play first: 
-        if( GetFirstPlayer == '' && GetSecondPlayer == '' )
-        {
-            title.innerText = 'X O GAME'
-        } else {
-            title.innerText =  resultPlayer.toUpperCase() + "  PLAY FIRST" ;
-        }
+        localStorage.setItem('FirstPlayer',player_1);
+        localStorage.setItem('SecondPlayer',player_2); 
+        // TEST : 
+        ScorePlayers();
+        title.innerText = `${player_1} Play first`;
+        GetIdSquare();
         })
+    
+        
         //   get id Square:
         function GetIdSquare(id){
+
+        // Get First Player and second one: 
+        let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+        let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
+        // Get Title to write who play first 
+        let Pl2 = document.getElementById('PlayerC');
 
         let element = document.getElementById(id)
         if(turn === 'X' && element.innerHTML == '' )
         {
         element.innerHTML = 'X';
         turn = 'O';
-        title.innerHTML =  ' Turn : O';
+        Pl2.innerText =  `Turn  : ${GetSecondPlayer}`;
         }
         else if (turn === 'O' && element.innerHTML == '' )
         {
         element.innerHTML = 'O';
         element.style.color =  'white';
         turn = 'X'
-        title.innerHTML =  ' Turn : X';
+        Pl2.innerText =  `Turn  : ${GetFirstPlayer}`;
         }
         WhoWin();
         }
@@ -82,8 +80,10 @@
             }
             else if(squares[3] == squares[5] && squares[5] == squares[7] && squares[5] != ''){
                 winner8();
+
+        } else {
+            Draw();
         }
-        Draw();
         }
         // function coloring Winning Squares:
         function Result(num1,num2,num3){
@@ -94,15 +94,18 @@
         }
         // Row 1,2,3 :who win?(X OR O):
         function winner1(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer'); 
             if(squares[1] == 'X' && squares[2] == 'X' && squares[3] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>`;
                 title.innerText = "X O GAME"
             } else if (squares[1] == 'O' && squares[2] == 'O' && squares[3] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
                 title.innerText = "X O GAME"
             }
             Result(1,2,3);
             refresh();
+            replay();
         }
         // Row 4,5,6:
         function winner2(){
@@ -115,6 +118,7 @@
             }
             Result(4,5,6);
             refresh();
+            replay();
         }
         // Row 7,8,9:
         function winner3(){
@@ -127,6 +131,7 @@
             }
             Result(7,8,9);
             refresh();
+            replay();
         }
         // row 1,4,7:
         function winner4(){
@@ -139,6 +144,7 @@
             }
             Result(1,4,7);
             refresh();
+            replay();
         }
         // row 2,5,8:
         function winner5(){
@@ -151,6 +157,7 @@
             }
             Result(2,5,8);
             refresh();
+            replay();
         }
         // row 3,6,9:
         function winner6(){
@@ -163,6 +170,7 @@
             }
             Result(3,6,9);
             refresh();
+            replay();
         }
         // row 1,5,9:
         function winner7(){
@@ -175,6 +183,7 @@
             }
             Result(1,5,9);
             refresh();
+            replay();
         }
 
         function winner8(){
@@ -187,6 +196,7 @@
             }
             Result(3,5,7);
             refresh();
+            replay();
         }
 
         // display block for the game:
@@ -203,6 +213,26 @@
         refresh.innerHTML = '<input value="Refresh" type="submit" id="refresh" class="refresh" onclick="window.location.reload();">'
         }
 
+        // Get button Rejouer : 
+        function replay(){
+         let rejouer = document.getElementById('rejouer');
+         rejouer.innerHTML = '<input value="Rejouer" type="submit" id="rejouer" class="rejouer" onclick="reset();">;'
+
+        }
+        // affichier ScoreBoard just When the game start:
+        function ScorePlayers(){
+
+        let ScoreB =  document.getElementById('visible');
+        ScoreB.style.visibility = "visible";
+        // take Values from input 
+        let pm1 = localStorage.getItem('FirstPlayer');
+        let pm2 = localStorage.getItem('SecondPlayer');
+        let p1 = document.getElementById('P1');
+        let p2 = document.getElementById('P2');
+         p1.innerText = `SCORE DE  ${pm1} :`;
+         p2.innerText = `SCORE DE  ${pm2} :`;
+        }
+
         // In case Draw:
         function Draw(){
             if(squares.every(e => e != "")){
@@ -212,6 +242,16 @@
                 }
             }
         } 
+        // Reset the game : 
+        function reset(){
+            for (let i= 1; i<10; i++){
+                document.getElementById('item' + i).innerHTML = "";
+                document.getElementById('item' + i).style.backgroundColor = "#FFDE00";
+                    }
+                    let score = document.getElementById('winner');
+                    score.textContent = "";
+        }
+        
 
 
 

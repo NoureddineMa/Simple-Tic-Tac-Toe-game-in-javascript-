@@ -9,6 +9,7 @@ body {
   align-items: center;
   padding: 30px;
   border-radius: 1rem;
+  visibility: hidden;
 }
 form {
     background-color: #FFDE00;  
@@ -32,6 +33,16 @@ form {
     border: none;
 }
 .refresh {
+  border-radius: 12px;
+  margin: 30px;
+  background-color: #25316D;
+  color: white;
+  padding:5px 70px;
+  cursor: pointer;
+  font-weight: bolder;
+  border: none;
+}
+.rejouer {
   border-radius: 12px;
   margin: 30px;
   background-color: #25316D;
@@ -79,4 +90,5 @@ form {
     cursor: pointer;
     background-color: #D6CDA4 ;
   }
+ 
   
