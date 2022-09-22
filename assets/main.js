@@ -93,13 +93,16 @@
             document.getElementById('item'+num3).style.background = '#25316D';
         }
         // Row 1,2,3 :who win?(X OR O):
+        
         function winner1(){
             let GetSecondPlayer = localStorage.getItem('SecondPlayer');
             let GetFirstPlayer =  localStorage.getItem('FirstPlayer'); 
             if(squares[1] == 'X' && squares[2] == 'X' && squares[3] == 'X'){
                 DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>`;
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             } else if (squares[1] == 'O' && squares[2] == 'O' && squares[3] == 'O') {
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
                 title.innerText = "X O GAME"
             }
@@ -109,11 +112,15 @@
         }
         // Row 4,5,6:
         function winner2(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[4] == 'X' && squares[5] == 'X' && squares[6] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>`
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`; 
                 title.innerText = "X O GAME"
             } else if (squares[4] == 'O' && squares[5] == 'O' && squares[6] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
                 title.innerText = "X O GAME"
             }
             Result(4,5,6);
@@ -122,11 +129,15 @@
         }
         // Row 7,8,9:
         function winner3(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[7] == 'X' && squares[8] == 'X' && squares[9] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>` 
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             }  else if (squares[7] == 'O' && squares[8] == 'O' && squares[9] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
                 title.innerText = "X O GAME"
             }
             Result(7,8,9);
@@ -135,11 +146,15 @@
         }
         // row 1,4,7:
         function winner4(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[1] == 'X' && squares[4] == 'X' && squares[7] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>` 
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             }  else if (squares[1] == 'O' && squares[4] == 'O' && squares[7] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 title.innerText = "X O GAME"
             }
             Result(1,4,7);
@@ -148,11 +163,15 @@
         }
         // row 2,5,8:
         function winner5(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[2] == 'X' && squares[5] == 'X' && squares[8] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>` 
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             }  else if (squares[2] == 'O' && squares[5] == 'O' && squares[8] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 title.innerText = "X O GAME"
             }
             Result(2,5,8);
@@ -161,11 +180,15 @@
         }
         // row 3,6,9:
         function winner6(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[3] == 'X' && squares[6] == 'X' && squares[9] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>`
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`; 
                 title.innerText = "X O GAME"
             } else if (squares[3] == 'O' && squares[6] == 'O' && squares[9] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 title.innerText = "X O GAME"
             }
             Result(3,6,9);
@@ -174,11 +197,15 @@
         }
         // row 1,5,9:
         function winner7(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[1] == 'X' && squares[5] == 'X' && squares[9] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>` 
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             }  else if (squares[1] == 'O' && squares[5] == 'O' && squares[9] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 title.innerText = "X O GAME"
             }
             Result(1,5,9);
@@ -187,11 +214,15 @@
         }
 
         function winner8(){
+            let GetSecondPlayer = localStorage.getItem('SecondPlayer');
+            let GetFirstPlayer =  localStorage.getItem('FirstPlayer');
             if(squares[3] == 'X' && squares[5] == 'X' && squares[7] == 'X'){
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> X Win The Game </h1>' 
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetFirstPlayer} Win The Game </h1>` 
+                document.getElementById('P1').innerText = `SCORE DE ${GetFirstPlayer} :  ${++ScoreX}`;
                 title.innerText = "X O GAME"
             }  else if (squares[3] == 'O' && squares[5] == 'O' && squares[7] == 'O') {
-                DeclareWinner.innerHTML = '<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> O Win The Game </h1>';
+                DeclareWinner.innerHTML = `<h1 style="padding: 20px 16px;background-color:#D6CDA4";padding:5px 10px;"> ${GetSecondPlayer} Win The Game </h1>`;
+                document.getElementById('P2').innerText = `SCORE DE ${GetSecondPlayer} :  ${++ScoreO}`;
                 title.innerText = "X O GAME"
             }
             Result(3,5,7);
@@ -242,7 +273,7 @@
                 }
             }
         } 
-        // Reset the game : 
+        // Reset the game :
         function reset(){
             for (let i= 1; i<10; i++){
                 document.getElementById('item' + i).innerHTML = "";
